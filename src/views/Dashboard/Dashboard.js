@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/styles";
 import { Grid } from "@material-ui/core";
 import axios from "axios";
@@ -8,7 +8,8 @@ import {
   NextRank,
   NextHacks,
   Rank,
-  Participated
+  Participated,
+  NewHacka
 } from "./components";
 
 const useStyles = makeStyles(theme => ({
@@ -20,6 +21,7 @@ const useStyles = makeStyles(theme => ({
 const Dashboard = () => {
   const classes = useStyles();
   const abortController = new AbortController();
+  const [IsCompany, setIsCompany] = useState(false)
 
   const storeLocal = (name, nickname, isCompany, country, region, imgurl) => {
     localStorage.setItem("name", name);
@@ -44,6 +46,7 @@ const Dashboard = () => {
         let country = dataJSON[0].data.document.country;
         let region = dataJSON[0].data.document.region;
         storeLocal(name, nickname, isCompany, country, region, imgurl);
+        setIsCompany(isCompany);
         return function cleanup() {
           abortController.abort();
         };
@@ -61,7 +64,7 @@ const Dashboard = () => {
           <NextRank valuerank={"newbie"} />
         </Grid>
         <Grid item lg={3} sm={2} xl={3} xs={12}>
-          <Participated valuerank={"embassador"} />
+          {IsCompany ? <NewHacka /> : <Participated />}
         </Grid>
         <Grid item lg={8} md={12} xl={9} xs={8}>
           <NextHacks />

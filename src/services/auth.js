@@ -1,8 +1,8 @@
 export const isAuthenticated = () => {
   let id = localStorage.getItem("id");
-  let Email = localStorage.getItem("Email");
+  let email = localStorage.getItem("email");
   let auth = false
-  id && Email ? (auth = true) : (auth = false);
+  id && email ? (auth = true) : (auth = false);
   console.log(auth);
   if (auth) {
     return true;

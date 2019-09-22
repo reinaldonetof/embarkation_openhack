@@ -3,3 +3,4 @@ export { default as NextRank } from './NextRank';
 export { default as NextHacks } from './NextHacks';
 export { default as Rank } from './Rank';
 export { default as Participated } from './Participated';
+export { default as NewHacka } from './NewHacka';
