@@ -22,7 +22,7 @@ const LogOut = () => {
   }, [])
   
   if(logout) {
-    return <Redirect to='' />
+    return <Redirect to='/' />
   }
   return (
     <div className="background-logout">

@@ -2,13 +2,7 @@ import React from 'react';
 import { Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import Rating from '@material-ui/lab/Rating';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';

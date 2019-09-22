@@ -16,9 +16,10 @@ const Welcome = () => {
   
   useEffect(() => {
     setTimeout(() => {
+      localStorage.clear();
       setVisible("flex");
-      setOpDiv(1)
-    }, 3800)
+      setOpDiv(1);
+    }, 3800);
   }, [])
 
   if(bSignIn) {

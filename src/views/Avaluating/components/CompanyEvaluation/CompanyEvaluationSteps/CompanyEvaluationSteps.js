@@ -5,11 +5,6 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
-import Rating from '@material-ui/lab/Rating';
-import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,7 +44,6 @@ const CompanyEvaluationSteps = props => {
   const [skipped, setSkipped] = React.useState(new Set());
   const steps = getSteps();
 
-  const [value, setValue] = React.useState(2);
   const { className, ...rest } = props;
   const [hover, setHover] = React.useState(-1);
 

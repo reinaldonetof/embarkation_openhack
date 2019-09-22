@@ -20,6 +20,7 @@ import {
   TableRow,
   Tooltip,
   TableSortLabel,
+  Link,
 } from '@material-ui/core'
 import ArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import ArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
@@ -102,13 +103,8 @@ const NextHacks = props => {
   }
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
-      <CardHeader
-        title='Next Hacks'
-      />
+    <Card {...rest} className={clsx(classes.root, className)}>
+      <CardHeader title="Next Hacks" />
       <Divider />
       <CardContent className={classes.content}>
         <PerfectScrollbar>
@@ -118,44 +114,32 @@ const NextHacks = props => {
                 <TableRow>
                   <TableCell>Company</TableCell>
                   <TableCell>Description</TableCell>
-                  <TableCell sortDirection='desc'>
-                    <Tooltip
-                      enterDelay={300}
-                      title='Sort'
-                    >
-                      <TableSortLabel
-                        active
-                        direction='desc'
-                      >
+                  <TableCell sortDirection="desc">
+                    <Tooltip enterDelay={300} title="Sort">
+                      <TableSortLabel active direction="desc">
                         Date
                       </TableSortLabel>
                     </Tooltip>
                   </TableCell>
-                  <TableCell size={'small'}>Value</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {companies.slice(initialCompany,rowPerPage).map(company => (
-                  <TableRow
-                    hover
-                    key={company.id}
-                  >
+                {companies.slice(initialCompany, rowPerPage).map(company => (
+                  <TableRow hover key={company.id}>
                     <TableCell>
-                      <Button size="small" className={classes.buttonOutlined} variant='outlined'
-                        onClick={() => handleCompany(company)}
+                      <Button
+                        size="small"
+                        className={classes.buttonOutlined}
+                        variant="outlined"
+                        onClick={() => {}}
                       >
-                        {company.ref}
+                        <Link>
+                          <a href={company.linkinscricao} target="_blank">{company.ref}</a>
+                        </Link>
                       </Button>
                     </TableCell>
                     <TableCell>{company.resumeDescription}</TableCell>
-                    <TableCell>
-                      {company.date}
-                    </TableCell>
-                    <TableCell>
-                      <div className={classes.statusContainer}>
-                        {company.rating} / 10
-                      </div>
-                    </TableCell>
+                    <TableCell>{company.date}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -165,17 +149,33 @@ const NextHacks = props => {
       </CardContent>
       <Divider />
       <CardActions className={classes.actions}>
-        <ButtonGroup variant='contained' size='small' aria-label='small contained button group'>
-          <Button variant='contained' disabled={disableLeft} color='default' className={classes.buttonGroup} onClick={() => handlePreviousPage()}>
+        <ButtonGroup
+          variant="contained"
+          size="small"
+          aria-label="small contained button group"
+        >
+          <Button
+            variant="contained"
+            disabled={disableLeft}
+            color="default"
+            className={classes.buttonGroup}
+            onClick={() => handlePreviousPage()}
+          >
             <ArrowLeftIcon />
           </Button>
-          <Button variant='contained' disabled={disableRight} color='default' className={classes.buttonGroup} onClick={() => handleNextPage()}>
+          <Button
+            variant="contained"
+            disabled={disableRight}
+            color="default"
+            className={classes.buttonGroup}
+            onClick={() => handleNextPage()}
+          >
             <ArrowRightIcon />
           </Button>
         </ButtonGroup>
       </CardActions>
     </Card>
-  )
+  );
 }
 
 NextHacks.propTypes = {

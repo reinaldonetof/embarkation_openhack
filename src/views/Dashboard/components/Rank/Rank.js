@@ -18,6 +18,8 @@ import {
   TableRow,
 } from '@material-ui/core';
 
+import axios from "axios";
+
 import mockData from './data'
 import logorank from '../../../../assets/rank/rank.png'
 
@@ -55,72 +57,62 @@ const useStyles = makeStyles(theme => ({
 
 const NextHacks = props => {
   const { className, ...rest } = props
-
   const classes = useStyles()
-
   const [companies] = useState(mockData)
-
   const [typeRank, setTypeRank] = useState('global')
+  const [rankGlobal, setRankGlobal] = useState([])
+
+  
 
   return (
-    <Card
-      {...rest}
-      className={clsx(classes.root, className)}
-    >
+    <Card {...rest} className={clsx(classes.root, className)}>
       <CardHeader
-        avatar={
-          <img src={logorank} className={classes.imageAvatar}/>
-        }
-        title={
-          <h3>Ranking</h3>
-        }
+        avatar={<img src={logorank} className={classes.imageAvatar} />}
+        title={<h3>Ranking</h3>}
         className={classes.headerCard}
       />
       <Divider />
       <CardContent className={classes.content}>
         <PerfectScrollbar>
           <div className={classes.inner}>
-            <Table>
-              <TableHead>
-                <TableRow>
+            <Table stickyHeader>
+              <TableHead style={{height:20}}>
+                <TableRow style={{height:20}}>
                   <TableCell>
-                    <Button onClick={() => setTypeRank('global')}>Rank Global</Button>
+                    <Button style={{height:25}} size="small" onClick={() => setTypeRank("global")}>
+                      Rank Global
+                    </Button>
                   </TableCell>
                   <TableCell>
-                    <Button onClick={() => setTypeRank('friends')}>Rank Amigo</Button>
+                    <Button style={{height:25}} size="small" onClick={() => setTypeRank("friends")}>
+                      Rank Amigo
+                    </Button>
                   </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                { (typeRank == 'global') ?
-                  companies.slice(0,5).map(company => (
-                  <TableRow
-                    hover
-                    key={company.id}
-                  >
-                    <TableCell>{company.ref}</TableCell>
-                    <TableCell>{company.customer.name}</TableCell>
-                  </TableRow>
-                ))
-                :
-                companies.slice(3,5).map(company => (
-                  <TableRow
-                    hover
-                    key={company.id}
-                  >
-                    <TableCell>{company.ref}</TableCell>
-                    <TableCell>{company.customer.name}</TableCell>
-                  </TableRow>
-                ))
-                }
+                <TableCell><h5>NAME</h5></TableCell>
+                <TableCell align="right"><h5>POINTS</h5></TableCell>
+                {typeRank == "global"
+                  ? companies.slice(0, 5).map(company => (
+                      <TableRow hover key={company.idUser}>
+                        <TableCell>{company.name}</TableCell>
+                        <TableCell align="right">{company.pont}</TableCell>
+                      </TableRow>
+                    ))
+                  : companies.slice(3, 5).map(company => (
+                      <TableRow hover key={company.idUser}>
+                        <TableCell>{company.name}</TableCell>
+                        <TableCell align="right">{company.pont}</TableCell>
+                      </TableRow>
+                    ))}
               </TableBody>
             </Table>
           </div>
         </PerfectScrollbar>
       </CardContent>
       <Divider />
-      <CardActions className={classes.actions}>
-      </CardActions>
+      <CardActions className={classes.actions}></CardActions>
     </Card>
   );
 };

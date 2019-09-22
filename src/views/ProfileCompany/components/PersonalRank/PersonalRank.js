@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { lighten, withStyles, makeStyles } from '@material-ui/core/styles';
+import { Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import StarIcon from '@material-ui/icons/Star';
 
 import Newbie from '../../../../assets/niveis/iniciante.png';
@@ -19,9 +18,6 @@ const useStyles = makeStyles(theme => ({
   content: {
     alignItems: 'center',
     display: 'flex'
-  },
-  title: {
-    fontWeight: 700
   },
   avatar: {
     height: 56,

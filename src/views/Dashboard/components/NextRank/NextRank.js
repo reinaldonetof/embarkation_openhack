@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
-import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core'
-import LinearProgress from '@material-ui/core/LinearProgress'
-import { lighten, withStyles, makeStyles } from '@material-ui/core/styles'
+import { Card, CardContent, Grid, Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 import TrendingFlat from '@material-ui/icons/TrendingFlat';
 
 

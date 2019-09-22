@@ -1,64 +1,39 @@
-import uuid from 'uuid/v1';
+import uuid from "uuid/v1";
 
 export default [
   {
-    id: uuid(),
-    ref: 'Amazon',
-    amount: 30.5,
-    customer: {
-      name: 'Ekaterina Tankova'
-    },
-    createdAt: 1555016400000,
-    status: 'pending'
+    idUser: "89410658",
+    name: "Fausto Silva",
+    pont: 1000
   },
   {
-    id: uuid(),
-    ref: 'Twitch',
-    amount: 25.1,
-    customer: {
-      name: 'Cao Yu'
-    },
-    createdAt: 1555016400000,
-    status: 'delivered'
+    idUser: "98435764",
+    name: "Silvio Santos",
+    pont: 900
   },
   {
-    id: uuid(),
-    ref: 'Shawee',
-    amount: 10.99,
-    customer: {
-      name: 'Alexa Richardson'
-    },
-    createdAt: 1554930000000,
-    status: 'refunded'
+    idUser: "98765421",
+    name: "Bel Pesce",
+    pont: 800
   },
   {
-    id: uuid(),
-    ref: 'Google',
-    amount: 96.43,
-    customer: {
-      name: 'Anje Keizer'
-    },
-    createdAt: 1554757200000,
-    status: 'pending'
+    idUser: "12385264",
+    name: "Darth Vader",
+    pont: 700
   },
   {
-    id: uuid(),
-    ref: 'Facebook',
-    amount: 32.54,
-    customer: {
-      name: 'Clarke Gillebert'
-    },
-    createdAt: 1554670800000,
-    status: 'delivered'
+    idUser: "80906475",
+    name: "Cebolinha",
+    pont: 600
   },
   {
-    id: uuid(),
-    ref: 'Alibaba',
-    amount: 16.76,
-    customer: {
-      name: 'Adam Denisov'
-    },
-    createdAt: 1554670800000,
-    status: 'delivered'
+    idUser: "65408521",
+    name: "Thiaguinho, aquele cantor de pagode",
+    pont: 500
+  },
+  {
+    idUser: "67342619",
+    name: "Linus Trovalds",
+    pont: 400
   }
 ];
