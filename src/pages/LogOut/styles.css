@@ -1,0 +1,12 @@
+.background-logout {
+  background-image: url('../../assets/backgroundimage/hackathon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-position-y: 0;
+}
